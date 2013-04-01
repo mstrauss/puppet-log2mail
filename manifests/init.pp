@@ -1,15 +1,15 @@
 # Class: log2mail
 #
 #
-class log2mail( $ensure = present ) {
-  
+class log2mail( $configuration = undef, $ensure = present ) inherits log2mail::defaults
+{
   package {
     log2mail: ensure => $ensure ? {
       /absent|false/ => purged,
       default        => $ensure,
     };
   }
-  
+  ->
   service {
     log2mail:
       hasstatus  => false,
@@ -23,5 +23,9 @@ class log2mail( $ensure = present ) {
         default        => true,
       }
       ;
+  }
+  
+  if $configuration != undef {
+    create_resources( "log2mail::directive", $configuration )
   }
 }

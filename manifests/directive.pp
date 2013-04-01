@@ -3,10 +3,10 @@
 # $name: unique name
 #
 define log2mail::directive(
-  $filename = '/var/log/syslog',
   $pattern,
-  $recipient = root,
-  $ensure = present
+  $filename  = $::log2mail::defaults::filename,
+  $recipient = $::log2mail::defaults::recipient,
+  $ensure    = present
 ) {
   
   Package[log2mail] -> Log2mail::Directive[$name]
