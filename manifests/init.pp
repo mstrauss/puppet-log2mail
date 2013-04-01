@@ -1,5 +1,19 @@
-# Class: log2mail
+# Class log2mail
 #
+# Description
+#
+# == Parameters
+#
+#   [*configuration*]
+#     Used via hiera.  See README.
+#
+# == Examples
+#
+#   include log2mail
+#
+# == Requires
+#
+#   An OS which knows about the log2mail package.
 #
 class log2mail( $configuration = undef, $ensure = present ) inherits log2mail::defaults
 {

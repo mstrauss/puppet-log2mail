@@ -1,4 +1,12 @@
-Installs and configures 
+puppet-log2mail
+===============
+
+Installs and configures log2mail.
+
+Requirements
+------------
+
+- Debian
 
 Installation
 ------------

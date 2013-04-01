@@ -1,6 +1,26 @@
-# Define: log2mail::directive
-# Parameters:
-# $name: unique name
+# Define log2mail::directive
+# 
+# Creates a logfile watching definition in +/etc/log2mail/config+.
+#
+# == Parameters
+#
+#   [*namevar*]
+#     A unique name.
+#   [*pattern*]
+#     The pattern to look for (regular expression).
+#   [*filename*]
+#     The file path of the file under watch.
+#
+# == Examples
+#
+#   log2mail::directive{ example:
+#     pattern  => 'ERROR',
+#     filename => '/var/www/rails_app/shared/log/production.log',
+#   }
+#
+# == Requires
+#
+#   class { log2mail: }
 #
 define log2mail::directive(
   $pattern,
